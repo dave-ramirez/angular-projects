@@ -12,4 +12,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  buscarHeroe(event) {
+    event.preventDefault();
+    console.log(event)
+  }
+
 }
