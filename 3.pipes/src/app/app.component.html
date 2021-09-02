@@ -26,6 +26,12 @@
         </tr>
 
         <tr>
+          <td>{{ nombre2 }}</td>
+          <td> capitalizado | Personalizado  </td>
+          <td>{{ nombre2 | capitalizado:true }}</td>
+        </tr>
+
+        <tr>
           <td>{{ nombre }}</td>
           <td> Slice:3 </td>
           <td>{{ nombre | slice:3 }}</td>
@@ -103,6 +109,62 @@
           <td>{{ valorPromesa | async }}</td>
         </tr>
 
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> date</td>
+          <td>{{ fecha | date }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> date:'medium' </td>
+          <td>{{ fecha | date:'medium' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> date:'short' </td>
+          <td>{{ fecha | date:'short' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> date:'MMMM - dd' </td>
+          <td>{{ fecha | date:'MMMM - dd' }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ fecha }}</td>
+          <td> 
+            date:'MMMM - dd':'':{{ idioma }} 
+            <br>
+            <button (click)="idioma='es'" class="me-1 btn btn-primary">
+              Espanol
+            </button>
+            <button (click)="idioma='en'" class="me-1 btn btn-secondary">
+              Ingles
+            </button>
+            <button (click)="idioma='fr'" class="me-1 btn btn-success">
+              Frances
+            </button>
+          </td>
+          <td>{{ fecha | date:'MMMM - dd':'':idioma }}</td>
+        </tr>
+
+
+
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>  
+            password: {{ actvar }}
+            <br>
+            <button (click)="actvar = !actvar" class="me-1 btn btn-outline-primary">
+              Activar/Desactivar
+            </button>
+          </td>
+          <td>{{ nombre | password:actvar}}</td>
+        </tr>
+
 
 
       </tbody>
@@ -122,6 +184,17 @@
         <pre>
           {{ heroe | json }}
         </pre>
+      </div>
+    </div>
+
+    <h3 class="mt-4"> DomSeguro</h3>
+    <hr>
+    <div class="row mb-5">
+      <div class="col">
+        <iframe width="560" height="315" [src]="videoURL | domseguro" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
       </div>
     </div>
   </div>
